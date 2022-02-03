@@ -28,5 +28,9 @@ public class CheckoutOverviewPage {
         finishButton.click();
     }
 
+    public int listSize(){
+        return listItemLabel.size();
+    }
+
 
 }

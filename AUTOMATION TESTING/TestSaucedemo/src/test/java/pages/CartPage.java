@@ -26,6 +26,12 @@ public class CartPage {
     @FindBy(id = "checkout")
     WebElement checkoutButton;
 
+    @FindBy(id = "remove-sauce-labs-backpack")
+    WebElement removebutton;
+
+    @FindBy(className = "cart_button")
+    List<WebElement> listRemoveButtons;
+
     @FindBy(className = "cart_item")
     List<WebElement> listItem;
 
@@ -41,8 +47,21 @@ public class CartPage {
         checkoutButton.click();
     }
 
+    public List<WebElement> getListItem() {
+        return listItem;
+    }
+
     public int cartSize(){
         return listItem.size();
+    }
+
+    //----------------------------------------------------------
+
+    public void removeProductsFromCart() throws InterruptedException {
+        for(int i = listRemoveButtons.size() - 1 ; i >= 0; i--){
+            Thread.sleep(5000);
+                listRemoveButtons.get(i).click();
+        }
     }
 
 }

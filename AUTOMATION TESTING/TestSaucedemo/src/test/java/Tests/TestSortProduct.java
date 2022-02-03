@@ -14,10 +14,12 @@ public class TestSortProduct extends Driver {
     }
 
     /**Test sort products from A to Z
-     * Log in parametars: username = standard_user , password = secret_sauce
-     * 1.Go on web site url = https://www.saucedemo.com/
-     * 2
-     *
+     * Log in parameters: username = standard_user , password = secret_sauce
+     * 1.Go on website url = https://www.saucedemo.com/
+     * 2.Log In(username = standard_user, password = secret_sauce
+     * 3.Click button log in
+     * 4.Sort products from A to Z
+     * Assert is sort
      */
 
     @Test
@@ -28,6 +30,16 @@ public class TestSortProduct extends Driver {
         Assert.assertTrue(homePageProduct.inventoryListName() <= 0, "Not sort");
     }
 
+    /**Test sort products from Z to A
+     * Log in parameters: username = standard_user , password = secret_sauce
+     * 1.Go on website url = https://www.saucedemo.com/
+     * 2.Log In(username = standard_user, password = secret_sauce
+     * 3.Click button log in
+     * 4.Sort products from Z to A
+     * Assert is sort
+     */
+
+
     @Test
     public void sortByNameZA() throws InterruptedException {
         logInPage.logIn();
@@ -36,6 +48,15 @@ public class TestSortProduct extends Driver {
         Assert.assertTrue(homePageProduct.inventoryListName() >= 0, "Not sort");
     }
 
+    /**Test sort products by price from low to high
+     * Log in parameters: username = standard_user , password = secret_sauce
+     * 1.Go on website url = https://www.saucedemo.com/
+     * 2.Log In(username = standard_user, password = secret_sauce
+     * 3.Click button log in
+     * 4.Sort products from low to high
+     * Assert is sort
+     */
+
     @Test
     public void sortByPriceLoHi() throws InterruptedException {
         logInPage.logIn();
@@ -43,6 +64,16 @@ public class TestSortProduct extends Driver {
 
         Assert.assertTrue(homePageProduct.inventoryListPrice() <= 0, "Not sort");
     }
+
+    /**Test sort products by price from high to low
+     * Log in parameters: username = standard_user , password = secret_sauce
+     * 1.Go on website url = https://www.saucedemo.com/
+     * 2.Log In(username = standard_user, password = secret_sauce
+     * 3.Click button log in
+     * 4.Sort products from high to low
+     * Assert is sort
+     */
+
 
     @Test
     public void sortByPriceHiLo() throws InterruptedException {

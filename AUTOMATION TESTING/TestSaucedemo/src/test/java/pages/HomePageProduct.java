@@ -41,6 +41,10 @@ public class HomePageProduct {
     @FindBy(className = "inventory_item_price")
     List<WebElement> inventoryItemsPrice;
 
+    public WebElement getAddToCartSauceLabsBackpack() {
+        return addToCartSauceLabsBackpack;
+    }
+
     public void clickAddToCartSauceLabsBackpack() {
         addToCartSauceLabsBackpack.click();
     }

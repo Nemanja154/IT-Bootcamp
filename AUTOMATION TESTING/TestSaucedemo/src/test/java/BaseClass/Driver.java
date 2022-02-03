@@ -8,6 +8,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.*;
 
+
+import java.io.IOException;
 import java.time.Duration;
 
 public class Driver {
@@ -25,11 +27,12 @@ public class Driver {
 
 
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws IOException {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 
 
         logInPage = new LogInPage(driver);
