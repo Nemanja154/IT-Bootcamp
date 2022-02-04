@@ -59,7 +59,6 @@ public class CartPage {
 
     public void removeProductsFromCart() throws InterruptedException {
         for(int i = listRemoveButtons.size() - 1 ; i >= 0; i--){
-            Thread.sleep(5000);
                 listRemoveButtons.get(i).click();
         }
     }

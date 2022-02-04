@@ -11,6 +11,7 @@ import pages.*;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class Driver {
     protected WebDriver driver;
@@ -24,10 +25,12 @@ public class Driver {
     protected CheckoutPage checkoutPage;
     protected CheckoutOverviewPage checkoutOverviewPage;
     protected CheckoutCompletePage checkoutCompletePage;
+    protected NavigationPage navigationPage;
+
 
 
     @BeforeClass
-    public void setUp() throws IOException {
+    public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -43,6 +46,7 @@ public class Driver {
         checkoutPage = new CheckoutPage(driver);
         checkoutOverviewPage = new CheckoutOverviewPage(driver);
         checkoutCompletePage = new CheckoutCompletePage(driver);
+        navigationPage = new NavigationPage(driver);
 
     }
 

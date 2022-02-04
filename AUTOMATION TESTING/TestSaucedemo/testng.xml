@@ -7,6 +7,7 @@
             <class name="Tests.TestLogInPage" />
             <class name="Tests.TestSortProduct" />
             <class name="Tests.TestOrderProduct" />
+            <class name="Tests.TestSocialButton" />
         </classes>
     </test>
 </suite>

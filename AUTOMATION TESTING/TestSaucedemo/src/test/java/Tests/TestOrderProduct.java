@@ -17,7 +17,7 @@ public class TestOrderProduct extends Driver {
 
     /**Test order one product
      * 1.Go on website url = https://www.saucedemo.com/
-     * 2.LogIn with correct username and password
+     * 2.LogIn with valid username and password
      * 3.Assert user is login
      * 4.Click add to cart Sauce Labs Backpack
      * 5.Click cart button
@@ -32,7 +32,7 @@ public class TestOrderProduct extends Driver {
     @Test(priority = 10)
     public void orderOneProduct(){
 
-        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not LoginHappyPath");
+        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not Login");
         wait.until(ExpectedConditions.visibilityOf(homePageProduct.getAddToCartSauceLabsBackpack()));
         homePageProduct.clickAddToCartSauceLabsBackpack();
         homePageHeader.clickCartButton();
@@ -46,10 +46,25 @@ public class TestOrderProduct extends Driver {
 
     }
 
+    /**Test order one product
+     * 1.Go on website url = https://www.saucedemo.com/
+     * 2.LogIn with valid username and password
+     * 3.Assert user is login
+     * 4.Click add to cart Sauce Labs Backpack
+     * 5.Click add to cart Sauce Labs Bike Light
+     * 6.Click cart button
+     * 7.Assert user see two element
+     * 8.Click Checkout button
+     * 9.Insert user information(First name: Pera, Last name: Peric, Postal code: 123456
+     * 10.Click Continue button
+     * 11.Assert user see two element
+     * 12.Click finish
+     * Assert message order is COMPLETE!
+     */
+
     @Test(priority = 20)
     public void orderTwoProduct(){
-
-        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not LoginHappyPath");
+        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not Login");
         homePageProduct.clickAddToCartSauceLabsBackpack();
         homePageProduct.clickAddToCartSauceLabsBikeLight();
         homePageHeader.clickCartButton();
@@ -62,9 +77,20 @@ public class TestOrderProduct extends Driver {
         Assert.assertTrue(checkoutCompletePage.getTextTitle().contains("COMPLETE!"));
     }
 
-    @Test(priority = 30)
+    /**Test order one product
+     * 1.Go on website url = https://www.saucedemo.com/
+     * 2.LogIn with valid username and password
+     * 3.Assert user is login
+     * 4.Click add to cart Sauce Labs Backpack
+     * 5.Click cart button
+     * 6.Assert user see one element
+     * 7.Click Continue Shopping Button
+     * Assert user see products
+     */
+
+    @Test(priority = 40)
     public void continueShopping() {
-        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not LoginHappyPath");
+        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not Login");
         homePageProduct.clickAddToCartSauceLabsBackpack();
         homePageHeader.clickCartButton();
         Assert.assertTrue(cartPage.cartSize() == 1,"There is not a single element in the list");
@@ -73,9 +99,23 @@ public class TestOrderProduct extends Driver {
 
     }
 
-    @Test(priority = 40)
+    /**
+     * 1.Go on website url = https://www.saucedemo.com/
+     * 2.LogIn with valid username and password
+     * 3.Assert user is login
+     * 4.Click add to cart Sauce Labs Backpack
+     * 5.Click add to cart Sauce Labs Bike Light
+     * 6.Click add to cart Sauce Labs Fleece Jacket
+     * 7.Click add to cart Sauce Labs Onesie
+     * 8.Click Cart Button
+     * 9.Assert cart is not empty
+     * 10.Remove products from cart
+     * 11.Assert cart is empty
+     */
+
+    @Test(priority = 30)
     public void removeAllProductsFromCart() throws InterruptedException {
-        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not LoginHappyPath");
+        Assert.assertTrue(homePageHeader.getTitle().getText().contains("PRODUCTS"), "User not Login");
         homePageProduct.clickAddToCartSauceLabsBackpack();
         homePageProduct.clickAddToCartSauceLabsBikeLight();
         homePageProduct.clickAddToCartSauceLabsFleeceJacket();

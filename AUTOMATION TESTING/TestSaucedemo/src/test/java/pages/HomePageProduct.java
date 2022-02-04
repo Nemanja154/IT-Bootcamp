@@ -35,8 +35,11 @@ public class HomePageProduct {
     @FindBy(id = "add-to-cart-test.allthethings()-t-shirt-(red)")
     WebElement addToCartTestAllTheThingsTShirtRed;
 
+    @FindBy(id = "item_4_img_link")
+    WebElement pictureSauceLabsBackpack;
+
     @FindBy(className = "inventory_item")
-    List<WebElement> inventotyItemsName;
+    List<WebElement> inventoryItemsName;
 
     @FindBy(className = "inventory_item_price")
     List<WebElement> inventoryItemsPrice;
@@ -69,12 +72,16 @@ public class HomePageProduct {
         addToCartTestAllTheThingsTShirtRed.click();
     }
 
+    public void clickPictureSauceLabsBackpack(){
+        pictureSauceLabsBackpack.click();
+    }
+
     //-----------------------------------------------------------------------
 
     public int inventoryListName() {
-        for (int i = 0; i < inventotyItemsName.size() - 1; i++) {
-            String first = inventotyItemsName.get(i).getText();
-            String second = inventotyItemsName.get(i + 1).getText();
+        for (int i = 0; i < inventoryItemsName.size() - 1; i++) {
+            String first = inventoryItemsName.get(i).getText();
+            String second = inventoryItemsName.get(i + 1).getText();
             int result = first.compareTo(second);
             return result;
         }

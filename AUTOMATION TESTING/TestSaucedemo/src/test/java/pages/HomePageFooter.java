@@ -22,6 +22,24 @@ public class HomePageFooter {
     WebElement facebookButton;
 
     @FindBy(className = "social_linkedin")
-    WebElement linkdinButton;
+    WebElement linkedInButton;
+
+    public void clickTwitterButton(){
+        twitterButton.click();
+    }
+
+    public void clickFacebookButton(){
+        facebookButton.click();
+    }
+
+    public void clickLinkedInButton(){
+        linkedInButton.click();
+    }
+
+    //------------------------------------------
+
+    public String getUrl(){
+        return driver.getCurrentUrl();
+    }
 
 }
